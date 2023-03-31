@@ -19,6 +19,8 @@
 }
 
 body {
+  background-color: #EEEBF2;
+  
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
@@ -28,7 +30,7 @@ ol, ul {
 
 a {
   cursor: pointer;
-  
+
   text-decoration: none;
 }
 
