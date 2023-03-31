@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --meteorite: #371F76;
+  --royal-purple: #64389F;
+  --portage: #AC94F4;
+  --butterfly-bush: #795695;
+  --light-wisteria: #CBA4D4;
+  --light-gray: #E1E1E1;
+}
+
+* {
+  box-sizing: border-box;
+
+  margin: 0;
+
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  cursor: pointer;
+  
+  text-decoration: none;
+}
+
+.container {
+  margin: auto;
+
+  padding: 20px;
+
+  width: 80%;
+}
