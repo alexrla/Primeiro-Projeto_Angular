@@ -34,8 +34,11 @@ export class ProductDetailsComponent implements OnInit {
 
       const newProduct: IProductCart = {
         ...this.product!,
+        quantity: (this.product!.quantity - this.quantity),
         amount: this.quantity,
       };
+
+      this.product!.quantity = (this.product!.quantity - this.quantity);
 
       this.cartService.addToCart(newProduct);
     }

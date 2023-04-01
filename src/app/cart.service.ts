@@ -12,24 +12,34 @@ export class CartService {
   getAmountCart() {
     const infoCart = localStorage.getItem("cartInfo");
 
-    if(infoCart === null) return 0;
+    if(infoCart === null) return [];
     else {
       const products = JSON.parse(infoCart);
 
-      let amount = 0;
+      return products;
 
-      for(let i = 0; i < products.length; i++)  {
-        amount += products[i].amount;
-      }
+      // let amount = 0;
 
-      return amount;
+      // for(let i = 0; i < products.length; i++)  {
+      //   amount += products[i].amount;
+      // }
+
+      // return amount;
+    }
+  }
+
+  getCart() {
+    const infoCart = localStorage.getItem("cartInfo");
+
+    if(infoCart === null) return [];
+    else {
+      this.items = JSON.parse(infoCart);
+      return this.items;
     }
   }
 
   addToCart(product: IProductCart) {
-    const newsProduct = this.items.filter(item => product.id = item.id);
-
-    console.log(newsProduct[0]);
+    const newsProduct = this.items.filter(item => item.id === product.id);
 
     if(newsProduct.length === 0) {
 
@@ -43,6 +53,12 @@ export class CartService {
 
       localStorage.setItem("cartInfo", JSON.stringify(this.items));
     }
+  }
+
+  removeItem(productId: number) {
+    this.items = this.items.filter(item => item.id !== productId);
+
+    localStorage.setItem("cartInfo", JSON.stringify(this.items));
   }
 
   clearCart() {

@@ -22,6 +22,8 @@
   color: var(--meteorite);
 
   font-size:60px;
+
+  font-weight: 700;
 }
 
 .hero__title--light {

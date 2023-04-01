@@ -7,12 +7,13 @@
   <div class="hero__container">
     <nav class="hero__menu">
       <ul>
-        <li class="hero__item"><a class="hero__link hero__link--hover">Produtos</a></li>
-        <li class="hero__item"><a class="hero__link hero__link--hover">Contato</a></li>
+        <li class="hero__item"><a routerLink="products" class="hero__link hero__link--hover">Produtos</a></li>
+        <li class="hero__item"><a routerLink="contact" class="hero__link hero__link--hover">Contato</a></li>
         <li class="hero__item cart">
-          <a class="hero__link">
+          <a routerLink="cart" class="hero__link">
             <i class="fa-solid fa-cart-shopping"></i>
-            <span class="badge-cart">{{ cartService.getAmountCart() }}</span>
+            <!-- <span class="badge-cart">{{ cartService.getAmountCart() }}</span> -->
+            <span class="badge-cart">{{ cartService.getAmountCart().length }}</span>
           </a>
         </li>
       </ul>

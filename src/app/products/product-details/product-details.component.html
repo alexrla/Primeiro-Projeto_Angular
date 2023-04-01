@@ -6,9 +6,9 @@
     <h2 class="product-details__name">{{ product?.name }}</h2>
     <h3 class="product-details__price">{{ product?.price | currency:"BRL" }}</h3>
     <p class="alert">Estoque disponível</p>
-    <label for="quantity" class="quantity">
+    <label class="quantity">
       Quantidade:
-      <input type="number" name="quantity" id="quantity" [(ngModel)]="quantity" min="1" max="{{ product?.quantity }}" [value]="quantity > 50 ? 50 : quantity"> unidade (s)
+      <input type="number" [(ngModel)]="quantity" min="1" max="{{ product?.quantity }}" [value]="quantity > 50 ? 50 : quantity"> unidade (s)
     </label>
     <p class="avaiability">
       {{ product?.quantity }} produto (s) em estoque

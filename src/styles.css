@@ -9,6 +9,8 @@
   --light-wisteria: #CBA4D4;
   --light-gray: #D4D4D4;
   --dark-gray: #333333;
+  --danger: #FA023C;
+  --success: #00B34C;
 }
 
 * {
