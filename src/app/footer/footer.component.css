@@ -6,6 +6,8 @@
   color: var(--meteorite);
 
   font-size: 18px;
+
+  padding: 12px 0;
 }
 
 .footer__container {
