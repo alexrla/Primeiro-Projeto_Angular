@@ -1,0 +1,36 @@
+.not-found {
+  align-items: center;
+
+  display: flex;
+
+  flex-flow: column nowrap;
+
+  height: 400px;
+
+  justify-content: center;
+
+  margin: 100px 0;
+}
+
+.not-found i {
+  animation: float 3s ease-in-out infinite;
+
+  color: var(--butterfly-bush);
+
+  font-size: 200px;
+}
+
+.not-found h2 {
+  color: var(--butterfly-bush);
+
+  font-size: 44px;
+
+  margin-top: 50px;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% { transform: translateY(-50px);}
+}
