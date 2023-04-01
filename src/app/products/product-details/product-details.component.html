@@ -8,11 +8,11 @@
     <p class="alert">Estoque disponível</p>
     <label for="quantity" class="quantity">
       Quantidade:
-      <input type="number" name="quantity" id="quantity" [(ngModel)]="quantity" min="1"> unidade (s)
+      <input type="number" name="quantity" id="quantity" [(ngModel)]="quantity" min="1" max="{{ product?.quantity }}" [value]="quantity > 50 ? 50 : quantity"> unidade (s)
     </label>
     <p class="avaiability">
       {{ product?.quantity }} produto (s) em estoque
     </p>
-    <button type="button">Adicionar ao carrinho</button>
+    <button type="button" (click)="addToCart()">Adicionar ao carrinho</button>
   </div>
 </section>
