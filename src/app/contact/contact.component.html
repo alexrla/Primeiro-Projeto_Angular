@@ -1,12 +1,88 @@
 <h2 class="contact__title">Entre em contato conosco</h2>
 <section class="contact">
-  <form action="#" class="contact__form">
-    <input type="text" placeholder="Nome..." class="input">
-    <input type="email"  placeholder="E-mail..." class="input">
-    <input type="tel" placeholder="(99) 99999-9999..." class="input">
-    <input type="text" placeholder="Assunto..." class="input">
-    <textarea cols="30" rows="10" placeholder="Mensagem..." maxlength="300"></textarea>
-    <input type="submit" value="Enviar" class="btn">
+  <form action="#" class="contact__form" [formGroup]="formContact" (ngSubmit)="submitForm()">
+    <input 
+      type="text" 
+      placeholder="Nome..." 
+      class="input" 
+      formControlName="name"
+      [class.valid]="formContact.controls['name'].valid"
+      [class.invalid]="formContact.controls['name'].invalid && (formContact.controls['name'].touched || formContact.controls['name'].dirty)"
+    >
+    <div *ngIf="formContact.controls['name'].invalid && (formContact.controls['name'].touched || formContact.controls['name'].dirty)">
+      <small class="error-message" *ngIf="formContact.controls['name'].hasError('minlength')">
+        Esse campo precisa de no mínimo 4 caracteres.
+      </small>
+      <small class="error-message" *ngIf="formContact.controls['name'].hasError('required')">
+        Campo obrigatório.
+      </small>
+    </div>
+    <input 
+      type="email"  
+      placeholder="E-mail..." 
+      class="input"
+      formControlName="email"
+      [class.valid]="formContact.controls['email'].valid"
+      [class.invalid]="formContact.controls['email'].invalid && (formContact.controls['email'].touched || formContact.controls['email'].dirty)"
+    >
+    <div *ngIf="formContact.controls['email'].invalid && (formContact.controls['email'].touched || formContact.controls['email'].dirty)">
+      <small class="error-message" *ngIf="formContact.controls['email'].hasError('email')">
+        E-mail inválido.
+      </small>
+      <small class="error-message" *ngIf="formContact.controls['email'].hasError('required')">
+        Campo obrigatório.
+      </small>
+    </div>
+    <input 
+      type="tel" 
+      placeholder="99 9 9999-9999..."
+      mask="99 9 9999-9999" 
+      class="input"
+      formControlName="phone"
+      [class.valid]="formContact.controls['phone'].valid"
+      [class.invalid]="formContact.controls['phone'].invalid && (formContact.controls['phone'].touched || formContact.controls['phone'].dirty)"
+    >
+    <div *ngIf="formContact.controls['phone'].invalid && (formContact.controls['phone'].touched || formContact.controls['phone'].dirty)">
+      <small class="error-message" *ngIf="formContact.controls['phone'].hasError('minlength') && formContact.controls['phone'].hasError('maxlength')">
+        Número de contato inválido.
+      </small>
+      <small class="error-message" *ngIf="formContact.controls['phone'].hasError('required')">
+        Campo obrigatório.
+      </small>
+    </div>
+    <input 
+      type="text" 
+      placeholder="Assunto..." 
+      class="input"
+      formControlName="subject"
+      [class.valid]="formContact.controls['subject'].valid"
+      [class.invalid]="formContact.controls['subject'].invalid && (formContact.controls['subject'].touched || formContact.controls['subject'].dirty)"
+    >
+    <div *ngIf="formContact.controls['subject'].invalid && (formContact.controls['subject'].touched || formContact.controls['subject'].dirty)">
+      <small class="error-message" *ngIf="formContact.controls['subject'].hasError('minlength')">
+        Esse campo precisa de no mínimo 10 caracteres.
+      </small>
+      <small class="error-message" *ngIf="formContact.controls['subject'].hasError('required')">
+        Campo obrigatório.
+      </small>
+    </div>
+    <textarea 
+      cols="30" rows="10" 
+      placeholder="Mensagem..." 
+      maxlength="300"
+      formControlName="message"
+      [class.valid]="formContact.controls['message'].valid"
+      [class.invalid]="formContact.controls['message'].invalid && (formContact.controls['message'].touched || formContact.controls['message'].dirty)"
+    ></textarea>
+    <div *ngIf="formContact.controls['message'].invalid && (formContact.controls['message'].touched || formContact.controls['message'].dirty)">
+      <small class="error-message" *ngIf="formContact.controls['message'].hasError('minlength')">
+        Esse campo precisa de no mínimo 20 caracteres.
+      </small>
+      <small class="error-message" *ngIf="formContact.controls['message'].hasError('required')">
+        Campo obrigatório.
+      </small>
+    </div>
+    <input type="submit" value="Enviar" class="btn" [disabled]="formContact.invalid">
   </form>
   <address>
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3933.2304275972797!2d-35.70315328485485!3d-9.661342393083835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x70145abc61800c3%3A0x480eb34475335817!2sPra%C3%A7a%20do%20Skate!5e0!3m2!1spt-BR!2sbr!4v1680335873769!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

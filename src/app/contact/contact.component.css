@@ -1,5 +1,5 @@
 .contact__title {
-  color: var(--dark-gray);
+  color: var(--royal-purple);
 
   font-size: 44px;
 
@@ -44,7 +44,8 @@
   padding-top: 8px;
 }
 
-:is(.contact__form) :is(.input, textarea) {
+.contact__form .input, 
+.contact__form textarea {
   border: 2px solid var(--light-gray);
 
   border-radius: 4px;
@@ -78,10 +79,26 @@
   filter: brightness(1.5);
 }
 
-.contact__form button:disabled {
+.contact__form .btn:disabled {
   background-color: var(--light-gray);
 }
 
-.contact__form button:disabled:hover {
+.contact__form .btn:disabled:hover {
   filter: none;
+}
+
+.contact__form .input.valid,
+.contact__form textarea.valid {
+  border: 2px solid var(--success);
+}
+
+.contact__form .input.invalid,
+.contact__form textarea.invalid {
+  border: 2px solid var(--danger);
+}
+
+.error-message {
+  color: var(--danger);
+
+  font-size: 14px;
 }
